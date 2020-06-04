@@ -81,15 +81,12 @@ for table in soup.find_all('table'):
             #print "--------"
              
 #print headers
-with open('demo.json','w') as f:
-    
+with open('demo.json','w') as f:    
     count = 0 
     for table in soup.find_all('table'):
-
-      keys = [th.get_text(strip=True)for th in table.find_all('th')]
+      keys = [th.get_text(strip=True)for th in table.find_all('th')
              
-      values = [td.get_text() for td in table.find_all('tr')]              
-     
+      values = [td.get_text() for td in table.find_all('tr')] 
       f.write('table'+str(count)+'\n')
       for i in values[1:]:
         print dict(zip(keys,i.split()))
