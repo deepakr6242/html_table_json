@@ -1,5 +1,4 @@
 html_data = """
-
 <!DOCTYPE html>
 <html>
 <body>
@@ -72,8 +71,7 @@ import json
 soup = BeautifulSoup(html_data,'html.parser')
 
 headers = [] 
-for table in soup.find_all('table'):
-  
+for table in soup.find_all('table'):  
   for row in table.find_all('tr'):
           if  row.find('th'):
             #print  row.text.strip().split('\n')
